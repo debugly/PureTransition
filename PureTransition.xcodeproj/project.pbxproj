@@ -25,6 +25,7 @@
 		DD748B731F8DA4EB00976CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD748B6E1F8DA4EA00976CE2 /* LaunchScreen.storyboard */; };
 		DD748B741F8DA4EB00976CE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD748B6F1F8DA4EA00976CE2 /* main.m */; };
 		DD748B751F8DA4EB00976CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD748B701F8DA4EA00976CE2 /* Main.storyboard */; };
+		DD748B7A1F8DA8A600976CE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD748B791F8DA8A600976CE2 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		DD748B6F1F8DA4EA00976CE2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD748B701F8DA4EA00976CE2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DD748B711F8DA4EB00976CE2 /* PureTransition-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureTransition-Prefix.pch"; sourceTree = "<group>"; };
+		DD748B791F8DA8A600976CE2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		DD748B781F8DA57500976CE2 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				DD748B791F8DA8A600976CE2 /* Images.xcassets */,
 				DD748B6E1F8DA4EA00976CE2 /* LaunchScreen.storyboard */,
 				DD748B6F1F8DA4EA00976CE2 /* main.m */,
 				DD748B701F8DA4EA00976CE2 /* Main.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD748B751F8DA4EB00976CE2 /* Main.storyboard in Resources */,
+				DD748B7A1F8DA8A600976CE2 /* Images.xcassets in Resources */,
 				DD748B721F8DA4EB00976CE2 /* PureTransition-Info.plist in Resources */,
 				DD748B731F8DA4EB00976CE2 /* LaunchScreen.storyboard in Resources */,
 			);
