@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDx-10-Bly">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Elevate Transition-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="SLRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="from" translatesAutoresizingMaskIntoConstraints="NO" id="pdb-zT-HVs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ue7-ND-L2M" appends="YES" id="w3h-lM-gO0"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pdb-zT-HVs" secondAttribute="trailing" id="8qG-H7-zQy"/>
+                            <constraint firstItem="pdb-zT-HVs" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="LHb-FY-zfl"/>
+                            <constraint firstAttribute="bottom" secondItem="pdb-zT-HVs" secondAttribute="bottom" id="R52-VP-NFl"/>
+                            <constraint firstItem="pdb-zT-HVs" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="SeZ-Vp-rnM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Elevate Transition" id="vGR-Pl-EQ6"/>
+                    <connections>
+                        <outlet property="cat" destination="pdb-zT-HVs" id="vJ4-hm-h4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ue7-ND-L2M">
+                    <connections>
+                        <action selector="tappedMyCat:" destination="whP-gf-Uak" id="04a-UG-iW0"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="606" y="143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vTl-kF-2cB">
+            <objects>
+                <navigationController id="NDx-10-Bly" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rLd-5I-Vmq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="delegate" destination="3IV-e4-jh8" id="CAy-98-dGr"/>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="49o-oS-p1d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7c-Mu-X47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="3IV-e4-jh8" customClass="SLNavigationControllerDelegate"/>
+            </objects>
+            <point key="canvasLocation" x="-191" y="143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="from" width="202" height="360"/>
+    </resources>
+</document>
