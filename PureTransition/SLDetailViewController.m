@@ -24,7 +24,7 @@
     bgView.frame = self.view.bounds;
     
     UIImageView *animationDest = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"beauty"]];
-    animationDest.frame = CGRectMake((self.view.bounds.size.width - 239)/2.0, 35, 239, 408);
+    animationDest.frame = CGRectMake((self.view.bounds.size.width - 239)/2.0, 80, 239, 408);
     [bgView addSubview:animationDest];
     
     _animationDest = animationDest;

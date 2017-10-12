@@ -20,14 +20,20 @@
     UIViewController<SLElevateToAnimatorProtocol>* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController<SLElevateFromAnimatorProtocol>* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
+    UIView *fromView = [fromViewController fromViewForAnimatedTransitioning];
+    UIView *toView = [toViewController toViewForAnimatedTransitioning];
+    
+    UIView *snapshotView = [fromView snapshotViewAfterScreenUpdates:NO];
+    
+    [toViewController.view addSubview:snapshotView];
+    snapshotView.frame = fromView.frame;
+    
     UIView *containerView = [transitionContext containerView];
     
     [containerView addSubview:fromViewController.view];
     [containerView addSubview:toViewController.view];
     
-    UIView *fromView = [fromViewController fromViewForAnimatedTransitioning];
-    UIView *toView = [toViewController toViewForAnimatedTransitioning];
-    
+/*
     CAShapeLayer *animationLayer = [CAShapeLayer layer];
     animationLayer.contents = fromView.layer.contents;
     animationLayer.position = fromView.layer.position;
@@ -79,14 +85,17 @@
         translationGroup.removedOnCompletion = NO;
         [animationLayer addAnimation:translationGroup forKey:@"group"];
     }
+ */
     
     ///做alpha渐变动画
     toViewController.view.alpha = 0;
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         toViewController.view.alpha = 1;
+        snapshotView.frame = toView.frame;
     } completion:^(BOOL finished) {
+        [snapshotView removeFromSuperview];
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        [animationLayer removeFromSuperlayer];
+//        [animationLayer removeFromSuperlayer];
     }];
 }
 
