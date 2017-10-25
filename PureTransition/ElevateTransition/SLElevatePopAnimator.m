@@ -20,16 +20,19 @@
     UIViewController<SLElevateToAnimatorProtocol>* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController<SLElevateFromAnimatorProtocol>* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
+    ///通过协议拿到做动画的view和动画的目的地；
     UIView *fromView = [fromViewController fromViewForAnimatedTransitioning];
     UIView *toView = [toViewController toViewForAnimatedTransitioning];
     
+    ///为 fromView 截图
     UIView *snapshotView = [fromView snapshotViewAfterScreenUpdates:NO];
     
+    ///把截图糊在 toViewController的上面，大小和fromView一样大，这样看到的必然是截图了
     [toViewController.view addSubview:snapshotView];
     snapshotView.frame = fromView.frame;
     
+    ///把转场view加到上下文容器上；
     UIView *containerView = [transitionContext containerView];
-    
     [containerView addSubview:fromViewController.view];
     [containerView addSubview:toViewController.view];
     
@@ -89,10 +92,12 @@
     
     ///做alpha渐变动画
     toViewController.view.alpha = 0;
+    ///将截图做个动画，移动到目的地；
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         toViewController.view.alpha = 1;
         snapshotView.frame = toView.frame;
     } completion:^(BOOL finished) {
+        ///动画完毕了，就可以吧截图去掉了
         [snapshotView removeFromSuperview];
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
 //        [animationLayer removeFromSuperlayer];
